@@ -23,7 +23,7 @@ const AIAssistant: React.FC = () => {
 
     try {
       const response = await fetch(
-       '/hf-api/v1/chat/completions',
+       '/api/chat',
         {
           method: 'POST',
           headers: {
