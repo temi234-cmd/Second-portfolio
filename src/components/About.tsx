@@ -36,7 +36,7 @@ const About: React.FC = () => {
 
           <div className="flex flex-wrap gap-6 items-center">
             <a 
-  href="/Resume.pdf" 
+  href="/Edited Resume.pdf" 
   target="_blank"
   rel="noopener noreferrer"
   className="bg-white text-background-dark font-black px-10 py-5 rounded-2xl flex items-center gap-3 hover:bg-primary transition-all hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
