@@ -15,8 +15,7 @@ Hi, I'm **Oluwagbotemi**, a Fullstack developer passionate about building clean,
 ## 🚀 Live Website
 🔗 https://my-portfolio-oluwagbotemis-projects.vercel.app/
 
-## 📄 Resume
-🔗
+
 
 ## 🛠 Built With
 - HTML
