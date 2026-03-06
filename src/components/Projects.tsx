@@ -2,7 +2,17 @@
 import React from 'react';
 import bubulizer from '../assets/Images/bubulizer.png';
 import aquamodam from '../assets/Images/aquamodam.jpeg';
+import focusflow from '../assets/Images/FocusFlow.png';
+import bookease from '../assets/Images/BookEase.png';
 const projects = [
+  {
+    title: 'FocusFlow',
+    description: 'A full-stack AI-powered productivity app with habit tracking, task management, and personalized weekly AI insights. Features streak reminders, push notifications and real-time analytics.',
+    tags: ['REACT', 'TYPESCRIPT', 'NODE.JS', 'MONGODB', 'AI'],
+    image: focusflow,
+    liveUrl: 'https://tryfocusflow.vercel.app',
+    githubUrl: 'https://github.com/temi234-cmd/focusflow-frontend.git'
+  },
   {
     title: 'Bubulizer',
     description: 'Modern e-commerce platform with advanced filtering, cart management, and secure payment integration.',
@@ -16,9 +26,17 @@ const projects = [
     description: 'A responsive ordering platform for a pure water factory, allowing wholesalers and retailers to order sachet and bottled water directly via WhatsApp. The platform focuses on simplicity, speed, and real-world business flow.',
     tags: ['JAVASCRIPT', 'CSS', 'HTML'],
     image: aquamodam,
-    liveUrl: 'https://aqua-modam.vercel.app',
-    githubUrl: 'https://github.com/temi234-cmd/modam.git'
-  }
+    liveUrl: '',
+    githubUrl: ''
+  },
+   {
+    title: 'BookEase',
+    description: 'A responsive web app for scheduling appointments with service providers. Features service selection, date & time picker with validations, and WhatsApp booking confirmation. Built with HTML, CSS, and Vanilla JS. ',
+    tags: ['HTML', 'CSS', 'JAVASCRIPT',],
+    image: bookease,
+    liveUrl: 'https://bookease-pi.vercel.app/',
+    githubUrl: 'https://github.com/temi234-cmd/Bookease.git'
+  },
 ];
 
 const Projects: React.FC = () => {

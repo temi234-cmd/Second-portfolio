@@ -19,7 +19,7 @@ const Contact: React.FC = () => {
       </a>
 
       <div className="mt-32 pt-16 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-10 opacity-30">
-        <span className="font-mono text-[10px] tracking-[0.4em] uppercase">© 2024 GBOTEMI_DIGITAL</span>
+        <span className="font-mono text-[10px] tracking-[0.4em] uppercase">© 2026 GBOTEMI_DIGITAL</span>
         <div className="flex flex-wrap justify-center gap-10 font-mono text-[10px] tracking-[0.4em] uppercase">
           <a className="hover:text-primary transition-colors" href="https://github.com/temi234-cmd">GITHUB</a>
           <a className="hover:text-primary transition-colors" href="https://wa.me/2349163208899">WHATSAPP</a>
