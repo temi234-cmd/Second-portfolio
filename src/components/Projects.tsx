@@ -4,6 +4,7 @@ import bubulizer from '../assets/Images/bubulizer.png';
 import aquamodam from '../assets/Images/aquamodam.jpeg';
 import focusflow from '../assets/Images/FocusFlow.png';
 import bookease from '../assets/Images/BookEase.png';
+import fintrack from '../assets/Images/fintrack.png'
 const projects = [
   {
     title: 'FocusFlow',
@@ -37,6 +38,14 @@ const projects = [
     liveUrl: 'https://bookease-pi.vercel.app/',
     githubUrl: 'https://github.com/temi234-cmd/Bookease.git'
   },
+{
+  title: 'FinTrack',
+  description: 'A full-stack personal finance dashboard for tracking income, expenses, and budgets. Features real-time analytics, AI-ready insights, multi-currency support, and Google OAuth authentication. Built with React, TypeScript, Supabase, and Recharts.',
+  tags: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Recharts'],
+  image: fintrack,
+  liveUrl: 'https://fintrack-seven-lake.vercel.app/',
+  githubUrl: 'https://github.com/temi234-cmd/Fintrack.git'
+},
 ];
 
 const Projects: React.FC = () => {
