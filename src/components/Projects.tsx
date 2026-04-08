@@ -27,8 +27,8 @@ const projects = [
     description: 'A responsive ordering platform for a pure water factory, allowing wholesalers and retailers to order sachet and bottled water directly via WhatsApp. The platform focuses on simplicity, speed, and real-world business flow.',
     tags: ['JAVASCRIPT', 'CSS', 'HTML'],
     image: aquamodam,
-    liveUrl: '',
-    githubUrl: ''
+    liveUrl: 'https://aqua-modam.vercel.app/',
+    githubUrl: 'https://github.com/temi234-cmd/modam'
   },
    {
     title: 'BookEase',
