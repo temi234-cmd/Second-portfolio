@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const skills = [
   { name: 'HTML5', icon: 'html', desc: 'Semantic Structure & SEO' },
@@ -13,6 +13,24 @@ const skills = [
 ];
 
 const Stack: React.FC = () => {
+  useEffect(() => {
+    const revealItems = document.querySelectorAll<HTMLElement>('.reveal');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    revealItems.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="bg-surface/30 border-y border-white/5 py-32 px-6 -mx-12">
       <div className="max-w-7xl mx-auto">
@@ -23,7 +41,11 @@ const Stack: React.FC = () => {
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {skills.map((skill, idx) => (
-            <div key={idx} className="glass p-8 rounded-2xl flex flex-col items-center gap-4 group hover:bg-primary/5 hover:border-primary/20 transition-all duration-300">
+            <div
+              key={idx}
+              style={{ transitionDelay: `${idx * 80}ms` }}
+              className={`reveal ${idx % 2 === 0 ? 'reveal-roll-left' : 'reveal-roll-right'} glass p-8 rounded-2xl flex flex-col items-center gap-4 group hover:bg-primary/5 hover:border-primary/20 transition-all duration-300`}
+            >
               <div className="size-16 rounded-full bg-white/5 flex items-center justify-center group-hover:text-primary transition-all group-hover:scale-110">
                 <span className="material-symbols-outlined text-4xl">{skill.icon}</span>
               </div>

@@ -1,103 +1,138 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import bubulizer from '../assets/Images/bubulizer.png';
 import aquamodam from '../assets/Images/aquamodam.jpeg';
 import focusflow from '../assets/Images/FocusFlow.png';
 import bookease from '../assets/Images/BookEase.png';
-import fintrack from '../assets/Images/fintrack.png'
+import fintrack from '../assets/Images/fintrack.png';
+
 const projects = [
   {
     title: 'FocusFlow',
-    description: 'A full-stack AI-powered productivity app with habit tracking, task management, and personalized weekly AI insights. Features streak reminders, push notifications and real-time analytics.',
+    description:
+      'A full-stack AI-powered productivity app with habit tracking, task management, and personalized weekly AI insights. Features streak reminders, push notifications and real-time analytics.',
     tags: ['REACT', 'TYPESCRIPT', 'NODE.JS', 'MONGODB', 'AI'],
     image: focusflow,
     liveUrl: 'https://tryfocusflow.vercel.app',
-    githubUrl: 'https://github.com/temi234-cmd/focusflow-frontend.git'
+    githubUrl: 'https://github.com/temi234-cmd/focusflow-frontend.git',
   },
   {
     title: 'Bubulizer',
-    description: 'Modern e-commerce platform with advanced filtering, cart management, and secure payment integration.',
+    description:
+      'Modern e-commerce platform with advanced filtering, cart management, and secure payment integration.',
     tags: ['HTML', 'CSS', 'JAVASCRIPT', 'FIREBASE'],
     image: bubulizer,
     liveUrl: 'https://bubulizer.vercel.app',
-    githubUrl: 'https://github.com/temi234-cmd/bubulizer.git'
+    githubUrl: 'https://github.com/temi234-cmd/bubulizer.git',
   },
   {
     title: 'AquaModam',
-    description: 'A responsive ordering platform for a pure water factory, allowing wholesalers and retailers to order sachet and bottled water directly via WhatsApp. The platform focuses on simplicity, speed, and real-world business flow.',
+    description:
+      'A responsive ordering platform for a pure water factory, allowing wholesalers and retailers to order sachet and bottled water directly via WhatsApp. The platform focuses on simplicity, speed, and real-world business flow.',
     tags: ['JAVASCRIPT', 'CSS', 'HTML'],
     image: aquamodam,
     liveUrl: 'https://aqua-modam.vercel.app/',
-    githubUrl: 'https://github.com/temi234-cmd/modam'
+    githubUrl: 'https://github.com/temi234-cmd/modam',
   },
-   {
+  {
     title: 'BookEase',
-    description: 'A responsive web app for scheduling appointments with service providers. Features service selection, date & time picker with validations, and WhatsApp booking confirmation. Built with HTML, CSS, and Vanilla JS. ',
-    tags: ['HTML', 'CSS', 'JAVASCRIPT',],
+    description:
+      'A responsive web app for scheduling appointments with service providers. Features service selection, date & time picker with validations, and WhatsApp booking confirmation. Built with HTML, CSS, and Vanilla JS.',
+    tags: ['HTML', 'CSS', 'JAVASCRIPT'],
     image: bookease,
     liveUrl: 'https://bookease-pi.vercel.app/',
-    githubUrl: 'https://github.com/temi234-cmd/Bookease.git'
+    githubUrl: 'https://github.com/temi234-cmd/Bookease.git',
   },
-{
-  title: 'FinTrack',
-  description: 'A full-stack personal finance dashboard for tracking income, expenses, and budgets. Features real-time analytics, AI-ready insights, multi-currency support, and Google OAuth authentication. Built with React, TypeScript, Supabase, and Recharts.',
-  tags: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Recharts'],
-  image: fintrack,
-  liveUrl: 'https://fintrack-seven-lake.vercel.app/',
-  githubUrl: 'https://github.com/temi234-cmd/Fintrack.git'
-},
+  {
+    title: 'FinTrack',
+    description:
+      'A full-stack personal finance dashboard for tracking income, expenses, and budgets. Features real-time analytics, AI-ready insights, multi-currency support, and Google OAuth authentication. Built with React, TypeScript, Supabase, and Recharts.',
+    tags: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Recharts'],
+    image: fintrack,
+    liveUrl: 'https://fintrack-seven-lake.vercel.app/',
+    githubUrl: 'https://github.com/temi234-cmd/Fintrack.git',
+  },
 ];
 
 const Projects: React.FC = () => {
+  useEffect(() => {
+    const revealItems = document.querySelectorAll<HTMLElement>('.reveal');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    revealItems.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="max-w-7xl mx-auto py-32">
-      <div className="flex items-end justify-between mb-20">
+    <div className="max-w-7xl mx-auto py-20 md:py-32 px-4 md:px-0">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 md:mb-20 gap-4">
         <div>
-          <span className="font-mono text-primary text-sm tracking-widest uppercase mb-4 block">&lt;Projects /&gt;</span>
-          <h2 className="text-5xl md:text-6xl font-black">SELECTED WORK</h2>
+          <span className="font-mono text-primary text-sm tracking-widest uppercase mb-4 block">
+            &lt;Projects /&gt;
+          </span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black">SELECTED WORK</h2>
         </div>
         <div className="h-px bg-white/10 flex-grow mx-12 mb-5 hidden md:block"></div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
         {projects.map((project, idx) => (
-          <div key={idx} className="group glass rounded-[2.5rem] overflow-hidden hover:border-primary/40 hover:shadow-[0_0_50px_rgba(0,242,255,0.15)] transition-all duration-500 flex flex-col h-full">
+          <div
+            key={idx}
+            className={`reveal ${idx % 2 === 0 ? 'reveal-left' : 'reveal-right'} group glass rounded-[2rem] md:rounded-[2.5rem] overflow-hidden hover:border-primary/40 hover:shadow-[0_0_50px_rgba(0,242,255,0.15)] transition-all duration-500 flex flex-col h-full`}
+          >
             <div className="aspect-video w-full bg-surface overflow-hidden relative">
-              <img 
-                alt={project.title} 
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" 
-                src={project.image} 
+              <img
+                alt={project.title}
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                src={project.image}
               />
               <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
             </div>
-            
-            <div className="p-10 flex flex-col flex-1">
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.tags.map(tag => (
-                  <span key={tag} className="text-[10px] font-mono px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-white/50 group-hover:border-primary/20 group-hover:text-primary transition-colors">
+
+            <div className="p-6 md:p-10 flex flex-col flex-1">
+              <div className="flex flex-wrap gap-2 mb-4 md:mb-6">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-[10px] font-mono px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-white/50 group-hover:border-primary/20 group-hover:text-primary transition-colors"
+                  >
                     {tag}
                   </span>
                 ))}
               </div>
-              <h3 className="text-3xl font-bold mb-4">{project.title}</h3>
-              <p className="text-white/50 text-base leading-relaxed mb-10 flex-1">{project.description}</p>
-              
-              <div className="flex flex-wrap gap-4 mt-auto">
-                <a 
-                  href={project.liveUrl} 
+              <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">{project.title}</h3>
+              <p className="text-white/50 text-sm md:text-base leading-relaxed mb-6 md:mb-10 flex-1">
+                {project.description}
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mt-auto">
+                <a
+                  href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 text-center inline-flex items-center justify-center gap-2 bg-primary text-background-dark px-6 py-4 rounded-2xl font-black text-sm tracking-widest hover:brightness-110 hover:scale-[1.02] transition-all"
+                  className="flex-1 text-center inline-flex items-center justify-center gap-2 bg-primary text-background-dark px-6 py-3 md:py-4 rounded-2xl font-black text-sm tracking-widest hover:brightness-110 hover:scale-[1.02] transition-all"
                 >
-                  LIVE PREVIEW <span className="material-symbols-outlined text-lg">rocket_launch</span>
+                  LIVE PREVIEW{' '}
+                  <span className="material-symbols-outlined text-lg">rocket_launch</span>
                 </a>
-                <a 
-                  href={project.githubUrl} 
+                <a
+                  href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 text-center inline-flex items-center justify-center gap-2 border border-white/20 hover:border-primary/50 px-6 py-4 rounded-2xl font-black text-sm tracking-widest transition-all hover:scale-[1.02]"
+                  className="flex-1 text-center inline-flex items-center justify-center gap-2 border border-white/20 hover:border-primary/50 px-6 py-3 md:py-4 rounded-2xl font-black text-sm tracking-widest transition-all hover:scale-[1.02]"
                 >
-                  GITHUB <span className="material-symbols-outlined text-lg">terminal</span>
+                  GITHUB{' '}
+                  <span className="material-symbols-outlined text-lg">terminal</span>
                 </a>
               </div>
             </div>
