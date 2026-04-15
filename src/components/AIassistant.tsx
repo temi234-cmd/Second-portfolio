@@ -66,9 +66,9 @@ Keep answers short and concise.`
   };
 
   return (
-    <div className="fixed bottom-10 right-10 z-[60]">
+    <div className="fixed bottom-4 right-4 sm:bottom-10 sm:right-10 z-[60]">
       {isOpen ? (
-        <div className="glass w-[350px] h-[500px] rounded-3xl flex flex-col overflow-hidden shadow-2xl border border-primary/20 animate-in fade-in zoom-in duration-300">
+        <div className="glass w-[90vw] max-w-[380px] h-[80vh] md:h-[500px] rounded-3xl flex flex-col overflow-hidden shadow-2xl border border-primary/20 animate-in fade-in zoom-in duration-300">
           <div className="bg-primary/10 p-5 flex items-center justify-between border-b border-white/5">
             <div className="flex items-center gap-3">
               <div className="size-3 bg-primary rounded-full animate-pulse shadow-[0_0_10px_#00f2ff]"></div>

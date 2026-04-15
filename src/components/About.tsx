@@ -59,25 +59,24 @@ const About: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-4 md:gap-6 items-center">
+          <div className="flex items-center gap-3 flex-nowrap">
             <a
               href="Oluwagbotemi Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-background-dark font-black px-7 py-4 md:px-10 md:py-5 rounded-2xl flex items-center gap-3 hover:bg-primary transition-all hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] text-sm md:text-base w-full sm:w-auto justify-center"
+              className="bg-white text-background-dark font-black px-5 py-3 sm:px-7 sm:py-4 rounded-2xl inline-flex items-center gap-2 hover:bg-primary transition-all hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] text-xs sm:text-sm md:text-base min-w-[140px]"
             >
-              VIEW CV{' '}
+              VIEW CV
               <span className="material-symbols-outlined text-sm font-black">
                 open_in_new
               </span>
             </a>
-            <div className="flex gap-4">
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="size-14 md:size-16 rounded-2xl glass flex items-center justify-center hover:text-primary transition-all border border-white/10 hover:border-primary/40 group"
-              >
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="size-12 rounded-2xl glass flex items-center justify-center hover:text-primary transition-all border border-white/10 hover:border-primary/40 group p-3"
+            >
                 <svg
                   className="size-7 md:size-8 group-hover:scale-110 transition-transform"
                   fill="currentColor"
@@ -90,7 +89,6 @@ const About: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
