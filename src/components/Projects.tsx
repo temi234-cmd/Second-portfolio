@@ -4,17 +4,17 @@ import aquamodam from '../assets/Images/aquamodam.jpeg';
 import focusflow from '../assets/Images/FocusFlow.png';
 import bookease from '../assets/Images/BookEase.png';
 import fintrack from '../assets/Images/fintrack.png';
-
+import chopbetter from '../assets/Images/chopbetter.png';
 const projects = [
   {
-    title: 'FocusFlow',
-    description:
-      'A full-stack AI-powered productivity app with habit tracking, task management, and personalized weekly AI insights. Features streak reminders, push notifications and real-time analytics.',
-    tags: ['REACT', 'TYPESCRIPT', 'NODE.JS', 'MONGODB', 'AI'],
-    image: focusflow,
-    liveUrl: 'https://tryfocusflow.vercel.app',
-    githubUrl: 'https://github.com/temi234-cmd/focusflow-frontend.git',
-  },
+  title: 'Chop Better',
+  description:
+    'A food ordering platform for authentic Lagos street food. Features an auto-scrolling menu, WhatsApp order integration, and smooth scroll animations. Built to serve local restaurants looking to go digital.',
+  tags: ['REACT', 'VITE', 'TAILWIND CSS'],
+  image: chopbetter,
+  liveUrl: 'https://chop-better.vercel.app',
+  githubUrl: 'https://github.com/temi234-cmd/chop-better.git',
+},
   {
     title: 'Bubulizer',
     description:
@@ -50,6 +50,15 @@ const projects = [
     image: fintrack,
     liveUrl: 'https://fintrack-seven-lake.vercel.app/',
     githubUrl: 'https://github.com/temi234-cmd/Fintrack.git',
+  },
+    {
+    title: 'FocusFlow',
+    description:
+      'A full-stack AI-powered productivity app with habit tracking, task management, and personalized weekly AI insights. Features streak reminders, push notifications and real-time analytics.',
+    tags: ['REACT', 'TYPESCRIPT', 'NODE.JS', 'MONGODB', 'AI'],
+    image: focusflow,
+    liveUrl: 'https://tryfocusflow.vercel.app',
+    githubUrl: 'https://github.com/temi234-cmd/focusflow-frontend.git',
   },
 ];
 
