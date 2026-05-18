@@ -5,6 +5,7 @@ import focusflow from '../assets/Images/FocusFlow.png';
 import bookease from '../assets/Images/BookEase.png';
 import fintrack from '../assets/Images/fintrack.png';
 import chopbetter from '../assets/Images/chopbetter.png';
+import swifthaul from '../assets/Images/swifthaul.png';
 const projects = [
   {
   title: 'Chop Better',
@@ -32,6 +33,15 @@ const projects = [
     image: aquamodam,
     liveUrl: 'https://aqua-modam.vercel.app/',
     githubUrl: 'https://github.com/temi234-cmd/modam',
+  },
+    {
+    title: 'SwiftHaul',
+    description:
+      'Ibadan logistics company website',
+    tags: ['REACT', 'TAILWIND CSS', 'TYPESCRIPT'],
+    image: swifthaul,
+    liveUrl: 'https://swifthaul-taupe.vercel.app/',
+    githubUrl: 'https://github.com/temi234-cmd/swifthaul',
   },
   {
     title: 'BookEase',

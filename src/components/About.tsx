@@ -61,7 +61,7 @@ const About: React.FC = () => {
 
           <div className="flex items-center gap-3 flex-nowrap">
             <a
-              href="Oluwagbotemi Resume.pdf"
+              href="/001-Oluwagbotemi-Olatunji.pdf.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-background-dark font-black px-5 py-3 sm:px-7 sm:py-4 rounded-2xl inline-flex items-center gap-2 hover:bg-primary transition-all hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] text-xs sm:text-sm md:text-base min-w-[140px]"
